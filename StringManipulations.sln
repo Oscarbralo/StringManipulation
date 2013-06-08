@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringManipulations", "StringManipulations\StringManipulations.csproj", "{F99D4900-DF53-47E4-A7E5-D076112221BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F99D4900-DF53-47E4-A7E5-D076112221BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F99D4900-DF53-47E4-A7E5-D076112221BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F99D4900-DF53-47E4-A7E5-D076112221BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F99D4900-DF53-47E4-A7E5-D076112221BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
