@@ -26,6 +26,19 @@ namespace StringManipulations
             return new string(buffer);
 
         }
+        
+        static string AlphabetizeStringWithoutRepeatedChars(string to_alphabetize)
+        {
+            char[] buffer = to_alphabetize.ToCharArray();
+            StringBuilder sr = new StringBuilder("");
+            Array.Sort(buffer);
+            for (int i = 0; i < buffer.Length; i++)
+            {
+                if (!sr.ToString().Contains(buffer[i].ToString()))
+                    sr.Append(buffer[i].ToString());
+            }
+            return sr.ToString();
+        }
 
         static void Main(string[] args)
         {
@@ -41,12 +54,15 @@ namespace StringManipulations
             // Alphabetize
             string alphabetized = AlphabetizeString(input).Trim();
             
+            string alphabetizedWithoutRepeated = AlphabetizeStringWithoutRepeatedChars(input).Trim();
+            
             string[] lines = {
                                 "Original:\t" + input,
                                 "==========================",
                                 "Length:\t\t" + length,
                                 "Reversed:\t" + reversed,
-                                "Alphabetized:\t" + alphabetized
+                                "Alphabetized:\t" + alphabetized,
+                                "AlphabetizedWithoutRepeated:\t" + alphabetizedWithoutRepeated
                              };
 
             System.IO.File.WriteAllLines("output.txt", lines);
