@@ -26,7 +26,21 @@ namespace StringManipulations
             return new string(buffer);
 
         }
-
+        
+        //Added this method equal to Alphabetize but the return is without repeated characters
+        static string AlphabetizeStringWithoutRepeatedChars(string to_alphabetize)
+        {
+            char[] buffer = to_alphabetize.ToCharArray();
+            StringBuilder sr = new StringBuilder("");
+            Array.Sort(buffer);
+            for (int i = 0; i < buffer.Length; i++)
+            {
+                if (!sr.ToString().Contains(buffer[i].ToString()))
+                    sr.Append(buffer[i].ToString());
+            }
+            return sr.ToString();
+        }
+        
         static void Main(string[] args)
         {
             Console.Write("Enter string: ");
