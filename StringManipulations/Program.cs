@@ -1,4 +1,5 @@
 ﻿using System;
+﻿using SYstem.Collection.Generic;
 using System.Text;
 
 namespace StringManipulations
@@ -26,6 +27,23 @@ namespace StringManipulations
             return new string(buffer);
 
         }
+        
+        static string AlphabetizeStringWithoutRepeating(string to_alphabetize)
+        {
+            StringBuilder sb = new StringBuilder();
+            List<char> list = new List<char>();
+            char[] buffer = to_alphabetize.ToCharArray();
+            Array.Sort(buffer);
+            for(int i = 0; i < buffer.Length; i++)
+            {
+                if(!list.Contains(buffer[i]) && buffer[i] != ' ')
+                {
+                    list.Add(buffer[i]);
+                    sb.Append(buffer[i]);
+                }
+            }
+            return sb.ToString();
+        }
 
         static void Main(string[] args)
         {
@@ -41,12 +59,15 @@ namespace StringManipulations
             // Alphabetize
             string alphabetized = AlphabetizeString(input).Trim();
             
+            string alphabetizedWithoutRepeated = AlphabetizeStringWithoutRepeating(input);
+            
             string[] lines = {
                                 "Original:\t" + input,
                                 "==========================",
                                 "Length:\t\t" + length,
                                 "Reversed:\t" + reversed,
-                                "Alphabetized:\t" + alphabetized
+                                "Alphabetized:\t" + alphabetized,
+                                "Alphabetized without repeated chars:\t" + alphabetizedWithoutRepeated
                              };
 
             System.IO.File.WriteAllLines("output.txt", lines);
